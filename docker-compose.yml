@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  microservice:
+    image: openjdk:8-alpine
+    working_dir: /app
+    command: /bin/sh -c "./mvnw package && java -jar target/microservice-0.0.1-SNAPSHOT.jar"
+    ports:
+      - 8081:8081
+    volumes:
+      - .:/app
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
