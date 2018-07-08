@@ -7,6 +7,15 @@ Modern RESTful service with Java using Spring Framework.
 $ docker-compose up
 ```
 
+## Documentation
+```bash
+http://localhost:8081/swagger-ui.html
+```
+
+```bash
+http://localhost:8081/v2/api-docs
+```
+
 ## Endpoints
 Create user
 ```bash
