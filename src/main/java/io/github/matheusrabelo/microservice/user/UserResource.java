@@ -43,6 +43,7 @@ public class UserResource {
         Optional<User> user = userRepository.findById(id);
         if (user.isPresent()) {
             userRepository.deleteById(id);
+            return user.get();
         }
         throw new UserNotFoundException(String.format("Id %s not found", id));
     }
